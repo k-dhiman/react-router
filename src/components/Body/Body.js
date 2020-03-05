@@ -5,22 +5,25 @@ import Home from './../Home/Home';
 import About from './../About/About';
 import Contact from './../Contact/Contact';
 
-const Body = () => {
+const Body = (props) => {
     return (
-        <Switch>
-            <Route exact path="/">
-                <Home />
-            </Route>
+        <div>
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
 
-            <Route exact path="/about">
-                <About />
-            </Route>
+                <Route exact path="/about">
+                    <About designersList={props.designersList} clickEvent={props.click} />
+                </Route>
 
-            <Route exact path="/contact">
-                <Contact />
-            </Route>
+                <Route exact path="/contact">
+                    <Contact />
+                </Route>
 
-        </Switch>
+            </Switch>
+            
+        </div>
     );
 }
 
